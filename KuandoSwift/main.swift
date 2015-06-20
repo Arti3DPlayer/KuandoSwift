@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import AppKit
 
-print("Hello, World!")
+let busylight = BusyLight.singleton
+var daemon = NSThread(target: busylight, selector:"initUsb", object: nil)
+
+daemon.start()
+NSRunLoop.currentRunLoop().run()
 

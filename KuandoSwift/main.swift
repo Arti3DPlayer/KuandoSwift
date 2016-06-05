@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 
 let busylight = BusyLight.singleton
-var daemon = NSThread(target: busylight, selector:"initUsb", object: nil)
+var daemon = NSThread(target: busylight, selector:#selector(BusyLight.initUsb), object: nil)
 
 daemon.start()
 NSRunLoop.currentRunLoop().run()
